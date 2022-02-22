@@ -20,7 +20,6 @@ class UpiActivity : AppCompatActivity() {
             val  jsonObject = JSONObject()
             jsonObject.put("amount",120.54)
             jsonObject.put("merchantVPA","8310615397@axis")
-            // jsonObject.put("merchantVPA","9164489880@axis")
             jsonObject.put("merchantName","GFoods" )
             jsonObject.put("emailAddress","")
             val data = jsonObject.toString()
