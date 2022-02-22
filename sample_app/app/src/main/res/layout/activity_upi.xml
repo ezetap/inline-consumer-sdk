@@ -72,10 +72,12 @@
 
     </LinearLayout>
 
+
+
     <RelativeLayout
-        android:visibility="gone"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/pay"
+        android:layout_marginTop="20dp"
+       android:layout_below="@+id/payOption"
+        android:id="@+id/deRegistration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -88,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="PAY"
+            android:text="De-Registration"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold" />

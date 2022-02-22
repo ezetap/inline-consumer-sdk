@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import com.ezetap.consumerpaymentsdk.activity.ServiceActivity
 import com.ezetap.sample.R
 import org.json.JSONObject
@@ -15,6 +16,7 @@ class UpiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upi)
         val imVEzeUPI = findViewById<ImageView>(R.id.imVEzeUPI)
+        val deRegistration = findViewById<RelativeLayout>(R.id.deRegistration)
         imVEzeUPI.setOnClickListener {
             val intent = Intent(this@UpiActivity, ServiceActivity::class.java)
             val  jsonObject = JSONObject()
@@ -25,7 +27,12 @@ class UpiActivity : AppCompatActivity() {
             val data = jsonObject.toString()
             Log.d("UpiActivity" , "data ${data}" )
             intent.putExtra("payData", data)
-            //intent.putExtra("deRegister", true)
+            startActivityForResult(intent,1234)
+        }
+
+        deRegistration.setOnClickListener {
+            val intent = Intent(this@UpiActivity, ServiceActivity::class.java)
+            intent.putExtra("deRegister", true)
             startActivityForResult(intent,1234)
         }
     }
