@@ -22,40 +22,41 @@
                 android:layout_height="200dp"
                 android:src="@drawable/product1"
                 />
-            <TextView
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="4dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_below="@+id/productImage"
+
+            <com.ezetap.sample.textstyles.RTextTitle1
                 android:id="@+id/productName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productImage"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
                 android:text="Pink Umbrellba"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:layout_marginTop="2dp"
-                android:layout_marginStart="4dp"
-                android:textSize="15sp"
-                android:layout_below="@+id/productName"
-                android:id="@+id/productShortDescp"
-                android:text="Mulmul cooten saree"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:layout_marginBottom="5dp"
-                android:textStyle="bold"
-                android:layout_marginTop="4dp"
-                android:layout_marginStart="4dp"
-                android:textSize="16sp"
                 android:textColor="@color/black"
-                android:layout_below="@+id/productShortDescp"
-                android:id="@+id/productAmount"
-                android:text="1200"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.ezetap.sample.textStyles.RTextCaption
+                android:id="@+id/productShortDescp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productName"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:text="Mulmul cooten saree"
+                android:textSize="15sp" />
+
+            <com.ezetap.sample.textStyles.RTextBody
+                android:id="@+id/productAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productShortDescp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="5dp"
+                android:text="1200"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
 import com.ezetap.sample.R
 
 class ProductDetailActivity : AppCompatActivity() {
@@ -28,7 +29,7 @@ class ProductDetailActivity : AppCompatActivity() {
         productShortDescp.text = data.getStringExtra("productShortDescp")
         productAmount.text = "₹ ${data.getDoubleExtra("productAmount", 0.0)}"
 
-        val pay = findViewById<RelativeLayout>(R.id.pay)
+        val pay = findViewById<AppCompatButton>(R.id.pay)
         pay.setOnClickListener {
             startActivity(Intent(this, PaymentOptionActivity::class.java))
         }

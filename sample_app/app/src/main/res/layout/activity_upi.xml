@@ -5,52 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightGrey"
-    android:orientation="vertical"
-   >
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/r_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/ll"
+        android:id="@+id/payOption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
         android:orientation="vertical">
 
-
-        <androidx.appcompat.widget.Toolbar
+        <com.ezetap.sample.textstyles.RTextTitle1
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/lightblack">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_logo" />
-
-            </RelativeLayout>
-
-        </androidx.appcompat.widget.Toolbar>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_below="@+id/ll"
-        android:id="@+id/payOption"
-        android:orientation="vertical"
-        android:background="@color/white"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
             android:padding="10dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
             android:text="UPI Payment options"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imVEzeUPI"
@@ -62,40 +43,30 @@
             android:src="@drawable/upione" />
 
         <ImageView
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:fitsSystemWindows="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/upiall" />
+            android:src="@drawable/upiall"
+            android:visibility="gone" />
 
     </LinearLayout>
 
-
-
-    <RelativeLayout
-        android:layout_marginTop="20dp"
-       android:layout_below="@+id/payOption"
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/deRegistration"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/gradient"
-        android:padding="20dp">
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/pad10"
+        android:background="@drawable/primary_button"
+        android:fontFamily="@font/lato_black"
+        android:padding="@dimen/pad20"
+        android:text="De-Register"
+        android:textColor="@color/white"
+        android:textStyle="bold"
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="De-Registration"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
+        />
 
 </RelativeLayout>
