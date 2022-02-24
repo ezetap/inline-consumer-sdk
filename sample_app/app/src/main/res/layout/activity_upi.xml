@@ -36,11 +36,12 @@
         <ImageView
             android:id="@+id/imVEzeUPI"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:fitsSystemWindows="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/upione" />
+            android:src="@drawable/img_ezeupi_selector" />
 
         <ImageView
             android:layout_width="match_parent"

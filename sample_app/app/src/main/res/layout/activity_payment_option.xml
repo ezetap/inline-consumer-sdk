@@ -47,7 +47,7 @@
             android:adjustViewBounds="true"
             android:fitsSystemWindows="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/allotherpayment" />
+            android:src="@drawable/item_other_payments" />
 
     </LinearLayout>
 
