@@ -23,15 +23,17 @@ class ProductDetailActivity : AppCompatActivity() {
         var productShortDescp = findViewById<TextView>(R.id.productShortDescp)
         var productAmount = findViewById<TextView>(R.id.productAmount)
         val data = intent
-
+        val amount = data.getDoubleExtra("productAmount", 0.0)
         productImage.setImageResource(data.getIntExtra("productImage", R.drawable.product1))
         productName.text = data.getStringExtra("productName")
         productShortDescp.text = data.getStringExtra("productShortDescp")
-        productAmount.text = "₹ ${data.getDoubleExtra("productAmount", 0.0)}"
+        productAmount.text = "₹ ${amount}"
 
         val pay = findViewById<AppCompatButton>(R.id.pay)
         pay.setOnClickListener {
-            startActivity(Intent(this, PaymentOptionActivity::class.java))
+            val intent = Intent(this, PaymentOptionActivity::class.java)
+            intent.putExtra("productAmount", amount)
+            startActivity(intent)
         }
     }
 }
