@@ -18,10 +18,6 @@ class HomeActivity : AppCompatActivity() {
         val data = getProducts()
         val adapter = ProductAdapter(data ,  this@HomeActivity)
         recyclerview.adapter = adapter
-        /*initOliveListener()
-        iv_notif?.setOnClickListener { OliveUpiManager.getInstance(this@HomeActivity).deRegister() }
-*/
-
     }
 
 
@@ -34,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
             "Kanjeevaram Saree",
             "Vivacious colors, royal borders",
             "Very nice products",
-        1256.98
+        356.98
 
         ))
 
@@ -44,7 +40,7 @@ class HomeActivity : AppCompatActivity() {
             "Nauvari Saree",
             "Originating from the west coast",
             "Very nice products",
-            2056.34
+            205.34
 
         ))
         products.add(Product(
@@ -53,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
             "Bandhani Saree",
             "Nauvari sarees are styled",
             "Very nice products",
-            3256.12
+            325.12
 
         ))
         products.add(Product(
@@ -62,7 +58,7 @@ class HomeActivity : AppCompatActivity() {
             "Tant Saree",
             "Saree is a staple in every Bengali",
             "Very nice products",
-            9256.64
+            256.64
 
         ))
         products.add(Product(
@@ -71,7 +67,7 @@ class HomeActivity : AppCompatActivity() {
             "Banarsi Saree",
             "Banarsi saree was crafted",
             "Very nice products",
-            6256.43
+            200.43
 
         ))
         products.add(Product(
@@ -80,7 +76,7 @@ class HomeActivity : AppCompatActivity() {
             "Chikankari Saree",
             "Nawabi city of Lucknow",
             "Very nice products",
-            3256.24
+            156.24
 
         ))
         return products
@@ -95,6 +91,5 @@ class HomeActivity : AppCompatActivity() {
         intent.putExtra("productShortDescp", product.productShortDescription)
         intent.putExtra("productAmount", product.productAmount)
         startActivity(intent)
-
     }
 }

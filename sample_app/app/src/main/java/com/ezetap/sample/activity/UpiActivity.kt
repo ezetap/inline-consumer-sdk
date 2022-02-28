@@ -24,11 +24,13 @@ class UpiActivity : AppCompatActivity() {
 
         val imVEzeUPI = findViewById<ImageView>(R.id.imVEzeUPI)
         val deRegistration = findViewById<AppCompatButton>(R.id.deRegistration)
+        val data = intent
+        val amount = data.getDoubleExtra("productAmount", 0.0)
         imVEzeUPI.setOnClickListener {
             val intent = Intent(this@UpiActivity, ServiceActivity::class.java)
             val  jsonObject = JSONObject()
-            jsonObject.put("amount",120.54)
-            jsonObject.put("merchantVPA","8310615397@axis")
+            jsonObject.put("amount",amount)
+            jsonObject.put("merchantVPA","9949858407@axis")
             jsonObject.put("merchantName","GFoods" )
             jsonObject.put("emailAddress","")
             val data = jsonObject.toString()

@@ -23,8 +23,12 @@ class PaymentOptionActivity : AppCompatActivity() {
         imgBell.visibility = View.GONE
 
         val imvUpi = findViewById<ImageView>(R.id.imUpi)
+        val data = intent
+        val amount = data.getDoubleExtra("productAmount", 0.0)
         imvUpi.setOnClickListener {
-            startActivity(Intent(this, UpiActivity::class.java))
+            val intent = Intent(this, UpiActivity::class.java)
+            intent.putExtra("productAmount", amount)
+            startActivity(intent)
         }
 
     }
