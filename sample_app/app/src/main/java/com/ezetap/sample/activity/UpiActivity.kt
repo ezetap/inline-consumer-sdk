@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.appcompat.widget.AppCompatButton
-import com.ezetap.consumerpaymentsdk.activity.ServiceActivity
+import com.ezetap.consumerpaymentsdk.activity.ServiceSDKActivity
 import com.ezetap.sample.R
 import kotlinx.android.synthetic.main.r_header.*
 import org.json.JSONObject
@@ -27,11 +27,11 @@ class UpiActivity : AppCompatActivity() {
         val data = intent
         val amount = data.getDoubleExtra("productAmount", 0.0)
         imVEzeUPI.setOnClickListener {
-            val intent = Intent(this@UpiActivity, ServiceActivity::class.java)
+            val intent = Intent(this@UpiActivity, ServiceSDKActivity::class.java)
             val  jsonObject = JSONObject()
             jsonObject.put("amount",amount)
             jsonObject.put("merchantVPA","9949858407@axis")
-            jsonObject.put("merchantName","GFoods" )
+            jsonObject.put("merchantName","Nomi's Boutique" )
             jsonObject.put("emailAddress","")
             val data = jsonObject.toString()
             Log.d("UpiActivity" , "data ${data}" )
@@ -40,7 +40,7 @@ class UpiActivity : AppCompatActivity() {
         }
 
         deRegistration.setOnClickListener {
-            val intent = Intent(this@UpiActivity, ServiceActivity::class.java)
+            val intent = Intent(this@UpiActivity, ServiceSDKActivity::class.java)
             intent.putExtra("deRegister", true)
             startActivityForResult(intent,1234)
         }

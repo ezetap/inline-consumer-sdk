@@ -9,9 +9,10 @@
     android:padding="8dp">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:src="@drawable/ic_nomis"
+        android:id="@+id/imgMerchLogo"
+        android:layout_width="55dp"
+        android:layout_height="39dp"
+        android:src="@drawable/ic_merch_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
