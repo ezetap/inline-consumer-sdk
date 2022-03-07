@@ -30,7 +30,7 @@ class UpiActivity : AppCompatActivity() {
             val intent = Intent(this@UpiActivity, ServiceSDKActivity::class.java)
             val  jsonObject = JSONObject()
             jsonObject.put("amount",amount)
-            jsonObject.put("merchantVPA","9949858407@axis")
+            jsonObject.put("merchantVPA","saikiran@axis")
             jsonObject.put("merchantName","Nomi's Boutique" )
             jsonObject.put("emailAddress","")
             val data = jsonObject.toString()
