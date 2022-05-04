@@ -49,7 +49,13 @@ ext {
     coroutines = '1.5.2'
     constraintlayout = '2.1.2'
     appcompat_version = '1.4.0'
-
+    rxjava = '2.2.10'
+    rxandroid = '2.1.1'
+    rxkotlin = '2.4.0'
+    okHttp = '4.9.0'
+    rxjava2 = '2.5.0'
+    gson = '2.8.6'
+    squareupGson = '2.1.0'
 }
 
 
@@ -67,18 +73,24 @@ dependencies {
     implementation(name: 'app-debug', ext: 'aar')
 
     / RETROFIT/
-    implementation "com.squareup.retrofit2:retrofit:$retrofit"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
-    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$coroutinesExperimentalAdapter"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rxjava2"
+    implementation "com.google.code.gson:gson:$gson"
+    implementation "com.squareup.retrofit2:converter-gson:$squareupGson"
 
 
     / OKHttp Lib /
-    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
-    implementation "com.squareup.okhttp3:okhttp-urlconnection:$okHttpVersion"
+    implementation "com.squareup.okhttp3:okhttp:$okHttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:$okHttp"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
 
     / GLIDE /
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    api "io.reactivex.rxjava2:rxjava:$rxjava"
+    api "io.reactivex.rxjava2:rxandroid:$rxandroid"
+    api "io.reactivex.rxjava2:rxkotlin:$rxkotlin"
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
 }
