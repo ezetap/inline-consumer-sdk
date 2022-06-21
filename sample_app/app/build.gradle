@@ -5,23 +5,66 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 32
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.ezetap.sample"
         minSdkVersion 19
-        targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 32
         multiDexEnabled true
+        //mergeDebugResources true
+
+        vectorDrawables.useSupportLibrary = true
+        def code =1
+        def name = "1.0"
+        versionCode code
+        versionName name
+        resValue "string", "application_id", "com_ezetap_sample"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        applicationVariants.all { variant ->
+            variant.outputs.all { output ->
+                def apk = outputFileName
+                def newName = "com_ezetap_sample.apk"
+                outputFileName = new File(apk, newName)
+            }
+        }
+    }
+
+    signingConfigs {
+        ezetap {
+            storeFile file(KEY_STORE)
+            storePassword KEY_STORE_PASSWORD
+            keyAlias KEY_STORE_ALIAS
+            keyPassword KEY_PASSWORD
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        INLINEUPIQA_9307 {
+            resValue "string", "app_name", "INLINEUPIQA_9307"
+            applicationIdSuffix ".INLINEUPIQA_9307"
+            shrinkResources false
+            minifyEnabled false
+            debuggable true
+            signingConfig signingConfigs.ezetap
+            matchingFallbacks = ['debug', 'release']
+        }
+
+        INLINE_UPI_TEST {
+            resValue "string", "app_name", "INLINE_UPI_TEST"
+            applicationIdSuffix ".INLINE_UPI_TEST"
+            shrinkResources false
+            minifyEnabled false
+            debuggable true
+            signingConfig signingConfigs.ezetap
+            matchingFallbacks = ['debug', 'release']
         }
     }
     compileOptions {

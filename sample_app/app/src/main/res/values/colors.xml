@@ -9,10 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="container">#1A2B2B2B</color>
     <color name="bank_bg">#1ABCBCBC</color>
-
     <color name="lightblack">#212121</color>
     <color name="lightGrey">#F0F2F5</color>
     <color name="green">#06DA0E</color>
     <color name="greyOne">#e7e7e8</color>
+    <color name="merchant_ezetap_sdk_primary">#FF3D00</color>
+    <color name="merchant_ezetap_sdk_secondary">#06DA0E</color>
 
 </resources>
