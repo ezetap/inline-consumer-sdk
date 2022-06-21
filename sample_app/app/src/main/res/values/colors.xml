@@ -13,7 +13,7 @@
     <color name="lightGrey">#F0F2F5</color>
     <color name="green">#06DA0E</color>
     <color name="greyOne">#e7e7e8</color>
-    <color name="merchant_ezetap_sdk_primary">#FF3D00</color>
-    <color name="merchant_ezetap_sdk_secondary">#06DA0E</color>
+    <color name="merchant_ezetap_sdk_primary">#6655E8</color>
+    <color name="merchant_ezetap_sdk_secondary">#f5821e</color>
 
 </resources>

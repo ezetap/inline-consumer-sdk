@@ -41,24 +41,20 @@ class UpiActivity : AppCompatActivity() {
             val intent = Intent(this@UpiActivity, ServiceSDKActivity::class.java)
             val  jsonObject = JSONObject()
             jsonObject.put("amount",amount)
-            jsonObject.put("merchantName","Nomi's Boutique" )
             jsonObject.put("userEmailAddress","atif.q@ezetap.com")
             Log.d("UpiActivity", "BuildType ${BuildConfig.BUILD_TYPE}")
             if(BuildConfig.BUILD_TYPE.equals("INLINE_UPI_TEST")){
                 // INLINE_UPI_TEST
                 jsonObject.put("merchantSimulatorToken","ewogICJraWQiIDogImI2YzU2MDc1LTU3ZTItNDI5Ni1hZmI4LWE4NTJkY2M1MzFlNSIsCiAgImFsZyIgOiAiUlMyNTYiLAogICJ0eXAiIDogIkpXVCIKfQ.ewogICJlbWFpbElkIiA6ICJ0ZXN0VXNlckB0ZXN0LmNvbSIsCiAgIm5hbWUiIDogIlRlc3RVc2VyIiwKICAicGhvbmVOdW1iZXIiIDogIjk4MzAwOTgzMDAiLAogICJtZXJjaGFudENvZGUiIDogIklOTElORV9VUElfVEVTVCIsCiAgImlzcyIgOiAiSU5MSU5FX1VQSV9URVNUIiwKICAiaWF0IiA6IDE2NTA5NTUzNjQsCiAgImV4cCIgOiAxNjc2ODc1MzY0Cn0.AEg5UFKmN52TQEuxhy9UoFGls44Gw8ROj8_SFV-3Zb5UKbaOeVBoUrkc4AvTnJEppDDaOhirV-XdqQT9bIkKGwnsAL2oJoIIT7eGBtv6eYWpBVJepd0t608HSKBA2aW_VT7PDLZMsOYqnTAFfTw3juxB2ULEeczzTcHRerOG_ldTD5owFkUn620dxoqBUcGhsv-q2HWww5S0Ul9sPMZGndT5al19b0f3AlfjguIYx58FGsfrQMn7TqOkHN08fchYN-G53pLYVz_msR0Md90yPfy3UHijXhWecgMB7Jh_rHJABTh7ZGH9A9xZUvaNst8l4qGY52L1EAHaxUQ_PDbD1w")
                 jsonObject.put("merchantUUID","INLINE_UPI_TEST")
-                jsonObject.put("merchantName","INLINE_UPI_TEST" )
             }else if(BuildConfig.BUILD_TYPE.equals("INLINEUPIQA_9307")){
                 // INLINEUPIQA_9307
                 jsonObject.put("merchantSimulatorToken","ewogICJraWQiIDogImI2YzU2MDc1LTU3ZTItNDI5Ni1hZmI4LWE4NTJkY2M1MzFlNSIsCiAgImFsZyIgOiAiUlMyNTYiLAogICJ0eXAiIDogIkpXVCIKfQ.ewogICJlbWFpbElkIiA6ICJ0ZXN0VXNlckB0ZXN0LmNvbSIsCiAgIm5hbWUiIDogIlRlc3RVc2VyIiwKICAicGhvbmVOdW1iZXIiIDogIjk4MzAwOTgzMDAiLAogICJtZXJjaGFudENvZGUiIDogIklOTElORVVQSVFBXzkzMDciLAogICJpc3MiIDogIklOTElORVVQSVFBXzkzMDciLAogICJpYXQiIDogMTY1NTIwODg2MCwKICAiZXhwIiA6IDE2ODUyMDg4NjAKfQ.HJekRsVMHcqPAW1X3qMaYC918LpAqycMfb93P5cvcBicVQhFAB1X325rD2aDX0tBzaIJKHqqB8VRKoRAv_EhQ6q_6mrfymjIEpxXOR0TvkeICpPDi0BPgPZnRSV3Qh6aj4TFL3y-d98zzsNbx2tPvcMGukIi_9hHcj--lC3rJA8CcsGkvHGb2CQsd7fSIo-iIrK49X7mn0QPUhFxesuOltG2-hafBD1Dw_bMX0fOmNKfJnzkqkX1OUEMlk3aBV-JTqcmlWnxNPGBCPsj3aQnxObvG8feBGYNzJeNadkuqKN5Sx9lI-MkRgRU13UVUZNJLozKgDbrXlOA_t8Ekl9iHw")
                 jsonObject.put("merchantUUID","INLINEUPIQA_9307")
-                jsonObject.put("merchantName","INLINEUPIQA_9307" )
             }else {
                 // INLINE_UPI_TEST
                 jsonObject.put("merchantSimulatorToken","ewogICJraWQiIDogImI2YzU2MDc1LTU3ZTItNDI5Ni1hZmI4LWE4NTJkY2M1MzFlNSIsCiAgImFsZyIgOiAiUlMyNTYiLAogICJ0eXAiIDogIkpXVCIKfQ.ewogICJlbWFpbElkIiA6ICJ0ZXN0VXNlckB0ZXN0LmNvbSIsCiAgIm5hbWUiIDogIlRlc3RVc2VyIiwKICAicGhvbmVOdW1iZXIiIDogIjk4MzAwOTgzMDAiLAogICJtZXJjaGFudENvZGUiIDogIklOTElORV9VUElfVEVTVCIsCiAgImlzcyIgOiAiSU5MSU5FX1VQSV9URVNUIiwKICAiaWF0IiA6IDE2NTA5NTUzNjQsCiAgImV4cCIgOiAxNjc2ODc1MzY0Cn0.AEg5UFKmN52TQEuxhy9UoFGls44Gw8ROj8_SFV-3Zb5UKbaOeVBoUrkc4AvTnJEppDDaOhirV-XdqQT9bIkKGwnsAL2oJoIIT7eGBtv6eYWpBVJepd0t608HSKBA2aW_VT7PDLZMsOYqnTAFfTw3juxB2ULEeczzTcHRerOG_ldTD5owFkUn620dxoqBUcGhsv-q2HWww5S0Ul9sPMZGndT5al19b0f3AlfjguIYx58FGsfrQMn7TqOkHN08fchYN-G53pLYVz_msR0Md90yPfy3UHijXhWecgMB7Jh_rHJABTh7ZGH9A9xZUvaNst8l4qGY52L1EAHaxUQ_PDbD1w")
                 jsonObject.put("merchantUUID","INLINE_UPI_TEST")
-                jsonObject.put("merchantName","INLINE_UPI_TEST" )
             }
 
             jsonObject.put("phoneNumber", etPhoneNumber.text.toString())
@@ -78,17 +74,15 @@ class UpiActivity : AppCompatActivity() {
                 // INLINE_UPI_TEST
                 jsonObject.put("merchantSimulatorToken","ewogICJraWQiIDogImI2YzU2MDc1LTU3ZTItNDI5Ni1hZmI4LWE4NTJkY2M1MzFlNSIsCiAgImFsZyIgOiAiUlMyNTYiLAogICJ0eXAiIDogIkpXVCIKfQ.ewogICJlbWFpbElkIiA6ICJ0ZXN0VXNlckB0ZXN0LmNvbSIsCiAgIm5hbWUiIDogIlRlc3RVc2VyIiwKICAicGhvbmVOdW1iZXIiIDogIjk4MzAwOTgzMDAiLAogICJtZXJjaGFudENvZGUiIDogIklOTElORV9VUElfVEVTVCIsCiAgImlzcyIgOiAiSU5MSU5FX1VQSV9URVNUIiwKICAiaWF0IiA6IDE2NTA5NTUzNjQsCiAgImV4cCIgOiAxNjc2ODc1MzY0Cn0.AEg5UFKmN52TQEuxhy9UoFGls44Gw8ROj8_SFV-3Zb5UKbaOeVBoUrkc4AvTnJEppDDaOhirV-XdqQT9bIkKGwnsAL2oJoIIT7eGBtv6eYWpBVJepd0t608HSKBA2aW_VT7PDLZMsOYqnTAFfTw3juxB2ULEeczzTcHRerOG_ldTD5owFkUn620dxoqBUcGhsv-q2HWww5S0Ul9sPMZGndT5al19b0f3AlfjguIYx58FGsfrQMn7TqOkHN08fchYN-G53pLYVz_msR0Md90yPfy3UHijXhWecgMB7Jh_rHJABTh7ZGH9A9xZUvaNst8l4qGY52L1EAHaxUQ_PDbD1w")
                 jsonObject.put("merchantUUID","INLINE_UPI_TEST")
-                jsonObject.put("merchantName","INLINE_UPI_TEST" )
+
             }else if(Build.TYPE.equals("INLINEUPIQA_9307")){
                 // INLINEUPIQA_9307
                 jsonObject.put("merchantSimulatorToken","ewogICJraWQiIDogImI2YzU2MDc1LTU3ZTItNDI5Ni1hZmI4LWE4NTJkY2M1MzFlNSIsCiAgImFsZyIgOiAiUlMyNTYiLAogICJ0eXAiIDogIkpXVCIKfQ.ewogICJlbWFpbElkIiA6ICJ0ZXN0VXNlckB0ZXN0LmNvbSIsCiAgIm5hbWUiIDogIlRlc3RVc2VyIiwKICAicGhvbmVOdW1iZXIiIDogIjk4MzAwOTgzMDAiLAogICJtZXJjaGFudENvZGUiIDogIklOTElORVVQSVFBXzkzMDciLAogICJpc3MiIDogIklOTElORVVQSVFBXzkzMDciLAogICJpYXQiIDogMTY1NTIwODg2MCwKICAiZXhwIiA6IDE2ODUyMDg4NjAKfQ.HJekRsVMHcqPAW1X3qMaYC918LpAqycMfb93P5cvcBicVQhFAB1X325rD2aDX0tBzaIJKHqqB8VRKoRAv_EhQ6q_6mrfymjIEpxXOR0TvkeICpPDi0BPgPZnRSV3Qh6aj4TFL3y-d98zzsNbx2tPvcMGukIi_9hHcj--lC3rJA8CcsGkvHGb2CQsd7fSIo-iIrK49X7mn0QPUhFxesuOltG2-hafBD1Dw_bMX0fOmNKfJnzkqkX1OUEMlk3aBV-JTqcmlWnxNPGBCPsj3aQnxObvG8feBGYNzJeNadkuqKN5Sx9lI-MkRgRU13UVUZNJLozKgDbrXlOA_t8Ekl9iHw")
                 jsonObject.put("merchantUUID","INLINEUPIQA_9307")
-                jsonObject.put("merchantName","INLINEUPIQA_9307" )
             }else {
                 // INLINE_UPI_TEST
                 jsonObject.put("merchantSimulatorToken","ewogICJraWQiIDogImI2YzU2MDc1LTU3ZTItNDI5Ni1hZmI4LWE4NTJkY2M1MzFlNSIsCiAgImFsZyIgOiAiUlMyNTYiLAogICJ0eXAiIDogIkpXVCIKfQ.ewogICJlbWFpbElkIiA6ICJ0ZXN0VXNlckB0ZXN0LmNvbSIsCiAgIm5hbWUiIDogIlRlc3RVc2VyIiwKICAicGhvbmVOdW1iZXIiIDogIjk4MzAwOTgzMDAiLAogICJtZXJjaGFudENvZGUiIDogIklOTElORV9VUElfVEVTVCIsCiAgImlzcyIgOiAiSU5MSU5FX1VQSV9URVNUIiwKICAiaWF0IiA6IDE2NTA5NTUzNjQsCiAgImV4cCIgOiAxNjc2ODc1MzY0Cn0.AEg5UFKmN52TQEuxhy9UoFGls44Gw8ROj8_SFV-3Zb5UKbaOeVBoUrkc4AvTnJEppDDaOhirV-XdqQT9bIkKGwnsAL2oJoIIT7eGBtv6eYWpBVJepd0t608HSKBA2aW_VT7PDLZMsOYqnTAFfTw3juxB2ULEeczzTcHRerOG_ldTD5owFkUn620dxoqBUcGhsv-q2HWww5S0Ul9sPMZGndT5al19b0f3AlfjguIYx58FGsfrQMn7TqOkHN08fchYN-G53pLYVz_msR0Md90yPfy3UHijXhWecgMB7Jh_rHJABTh7ZGH9A9xZUvaNst8l4qGY52L1EAHaxUQ_PDbD1w")
                 jsonObject.put("merchantUUID","INLINE_UPI_TEST")
-                jsonObject.put("merchantName","INLINE_UPI_TEST" )
             }
             jsonObject.put("phoneNumber", etPhoneNumber.text.toString())
             val data = jsonObject.toString()
