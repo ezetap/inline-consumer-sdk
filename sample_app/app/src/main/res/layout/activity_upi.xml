@@ -57,6 +57,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <EditText
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/spacing_2"
+            android:layout_marginEnd="@dimen/spacing_2"
+            android:id="@+id/etOrder"
+            android:layout_marginTop="25dp"
+            android:hint="Enter your OrderId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,6 +80,21 @@
             android:visibility="gone" />
 
     </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btOrderHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/primary_button"
+        android:fontFamily="@font/lato_black"
+        android:padding="@dimen/pad20"
+        android:text="Txn Details"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+
+
+        />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/deRegistration"
