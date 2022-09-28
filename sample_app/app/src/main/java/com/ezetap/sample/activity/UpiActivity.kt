@@ -21,8 +21,10 @@ import kotlinx.android.synthetic.main.activity_upi.*
 import kotlinx.android.synthetic.main.r_header.*
 import org.json.JSONObject
 
+//8310615397
 @SuppressLint("LongLogTag")
 class UpiActivity : AppCompatActivity() {
+    var externalMerchantRef = ""
     val TAG = "com.ezetap.sample.activity.UpiActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,10 +68,14 @@ class UpiActivity : AppCompatActivity() {
                 jsonObject.put("merchantUUID","INLINE_UPI_TEST")
             }
 
-            jsonObject.put("phoneNumber", etPhoneNumber.text.toString())
-            //jsonObject.put("orderId", "ORDERID${randomNumber()}")
-            jsonObject.put("orderId", etOrder.text.toString())
+            if(!etExternalMerchantRef.text.isNullOrEmpty()) {
+                jsonObject.put("externalMerchantRef", etExternalMerchantRef.text.toString())
+            }else{
+                jsonObject.put("externalMerchantRef", "")
+            }
 
+            jsonObject.put("phoneNumber", etPhoneNumber.text.toString())
+            jsonObject.put("orderId", etOrder.text.toString())
             val data = jsonObject.toString()
             Log.d(TAG, "transactionRequest ${data}" )
             intent.putExtra("transactionRequest", data)
@@ -132,6 +138,11 @@ class UpiActivity : AppCompatActivity() {
             }
             jsonObject.put("phoneNumber", etPhoneNumber.text.toString())
             jsonObject.put("orderId", etOrder.text.toString())
+            if(!etExternalMerchantRef.text.isNullOrEmpty()) {
+                jsonObject.put("externalMerchantRef", etExternalMerchantRef.text.toString())
+            }else{
+                jsonObject.put("externalMerchantRef", "")
+            }
             val data = jsonObject.toString()
             intent.putExtra("transactionDetailRequest", data)
             Log.d(TAG , "transactionDetailRequest ${data}" )
